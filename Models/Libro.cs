@@ -30,7 +30,7 @@ namespace BibliotecaCampus.Models
         [RegularExpression(@"^LIB-\d{3}$", ErrorMessage = "El código interno debe tener el formato LIB-### (ej. LIB-001).")]
         public string CodigoInterno { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Debe indicar si el libro está disponible.")]
+        [Required(ErrorMessage = "Se debe indicar si el libro está disponible.")]
         public bool? Disponible { get; set; }
     }
 }
