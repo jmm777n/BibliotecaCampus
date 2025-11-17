@@ -1,0 +1,51 @@
+@model IEnumerable<BibliotecaCampus.Models.Libro>
+
+<h1 class="mb-4">Listado de Libros</h1>
+
+@if (TempData["Mensaje"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Mensaje"]
+    </div>
+}
+
+<p>
+    <a class="btn btn-primary" asp-action="Crear">Registrar nuevo libro</a>
+</p>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        No hay libros registrados todavía.
+    </div>
+}
+else
+{
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Categoría</th>
+                <th>Año</th>
+                <th>Páginas</th>
+                <th>Código Interno</th>
+                <th>Disponible</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var libro in Model)
+        {
+            <tr>
+                <td>@libro.Titulo</td>
+                <td>@libro.Autor</td>
+                <td>@libro.Categoria</td>
+                <td>@libro.AnioPublicacion</td>
+                <td>@libro.NumeroPaginas</td>
+                <td>@libro.CodigoInterno</td>
+                <td>@(libro.Disponible == true ? "Sí" : "No")</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
