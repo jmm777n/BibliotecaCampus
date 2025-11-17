@@ -18,7 +18,7 @@ namespace BibliotecaCampus.Models
         [Display(Name = "Año de publicación")]
         [Required(ErrorMessage = "El año de publicación es obligatorio.")]
         [Range(1900, 2100, ErrorMessage = "El año de publicación debe estar entre 1900 y el año actual.")]
-        public int? AnioPublicacion { get; set; }
+        public int? AñoPublicacion { get; set; }
 
         [Display(Name = "Número de páginas")]
         [Required(ErrorMessage = "El número de páginas es obligatorio.")]
